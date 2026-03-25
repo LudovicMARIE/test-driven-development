@@ -2,7 +2,7 @@ package roman
 
 import "strings"
 
-func ToRoman(num int) string {
+func ConvertIntToRomanNumeral(num int) string {
 
 	romanValues := []struct {
 		value  int

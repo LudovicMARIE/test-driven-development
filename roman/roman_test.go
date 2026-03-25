@@ -2,7 +2,7 @@ package roman
 
 import "testing"
 
-func TestToRoman(t *testing.T) {
+func TestConvertIntToRomanNumeral(t *testing.T) {
 	testCase := []struct {
 		name   string
 		value  int
@@ -17,11 +17,14 @@ func TestToRoman(t *testing.T) {
 		{"90", 90, "XC"},
 		{"400", 400, "CD"},
 		{"900", 900, "CM"},
+		{"1879", 1879, "MDCCCLXXIX"},
+		{"3999", 3999, "MMMCMXCIX"},
+		{"368", 368, "CCCLXVIII"},
 	}
 
 	for _, tc := range testCase {
 		t.Run(tc.name, func(t *testing.T) {
-			result := ToRoman(tc.value)
+			result := ConvertIntToRomanNumeral(tc.value)
 			if result != tc.result {
 				t.Errorf("Result was incorrect, got: %s, want: %s.", result, tc.result)
 			}
